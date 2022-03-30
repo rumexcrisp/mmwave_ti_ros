@@ -387,7 +387,9 @@ void *DataUARTHandler::sortIncomingData( void )
             }
             
             RScan->header.seq = 0;
-            RScan->header.stamp = ros::Time::now().toNSec()/1e3;
+            // RScan->header.stamp = ros::Time::now().toNSec();
+            // RScan->header.stamp = ros::Time::now().toNSec()/1e3;
+            pcl_conversions::toPCL(ros::Time::now(), RScan->header.stamp);
             // RScan->header.stamp = (uint32_t) mmwData.header.timeCpuCycles;
             RScan->header.frame_id = frameID;
             RScan->height = 1;

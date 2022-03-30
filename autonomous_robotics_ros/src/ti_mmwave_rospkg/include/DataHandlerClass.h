@@ -17,6 +17,7 @@
 #include "sensor_msgs/point_cloud2_iterator.h"
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
+#include <pcl_conversions/pcl_conversions.h>
 #include <visualization_msgs/Marker.h>
 #include <cmath>
 #define COUNT_SYNC_MAX 2
