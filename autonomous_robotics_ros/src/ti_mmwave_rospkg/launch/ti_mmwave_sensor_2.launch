@@ -20,21 +20,20 @@
     <param name="data_rate" value="921600"   />
     <param name="max_allowed_elevation_angle_deg" value="$(arg max_allowed_elevation_angle_deg)"   />
     <param name="max_allowed_azimuth_angle_deg" value="$(arg max_allowed_azimuth_angle_deg)"   />
-    <param name="frame_id" value="ti_mmwave"/>
+    <param name="frame_id" value="base_points2"/>
     <param name="mmWaveCLI_name" value="/mmWaveCLI" />
-    <remap from="/ti_mmwave/radar_scan_pcl" to="/ti_mmwave/radar_scan_pcl"/>
+    <!-- <remap from="/ti_mmwave/radar_scan_pcl" to="/ti_mmwave/radar_scan_pcl"/> -->
+    <remap from="/ti_mmwave/radar_scan_pcl" to="/points2"/>
   </node>
   
   <!-- mmWaveQuickConfig node (terminates after configuring mmWave sensor) -->
   <node pkg="ti_mmwave_rospkg" type="mmWaveQuickConfig" name="mmWaveQuickConfig" args="$(find ti_mmwave_rospkg)/cfg/$(arg config).cfg" output="screen" >
+  <!-- <node pkg="ti_mmwave_rospkg" type="mmWaveQuickConfig" name="mmWaveQuickConfig" args="$(find ti_mmwave_rospkg)/cfg/xwr68xx_AOP_profile_3_90_deg.cfg" output="screen" > -->
     <param name="mmWaveCLI_name" value="/mmWaveCLI" />
   </node>
-
-  <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="50.0" />
-  </node> -->
   
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="radar_baselink_0" args="0.19 0 0.18 0 0 3.1415 base_link ti_mmwave"/> -->
   <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="radar_baselink_0" args="0 0 0 0 0 0 base_link ti_mmwave"/> -->
-  <node pkg="hector_trajectory_server" type="hector_trajectory_server" name="hector_trajectory_server" />
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="radar_baselink_0" args="0 0 0 0 0 0 base_link base_points2"/> -->
 
 </launch>
