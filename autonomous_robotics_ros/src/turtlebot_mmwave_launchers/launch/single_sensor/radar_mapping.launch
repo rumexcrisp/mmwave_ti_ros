@@ -38,8 +38,8 @@
   <node pkg="nodelet" type="nodelet" name="mapping_SOR_filt_mapping" args="standalone pcl/StatisticalOutlierRemoval" output="screen" >
     <remap from="~input" to="raw_point_cloud_centers" />
     <remap from="~output" to="mapping_SOR_filter_out" />
-    <param name="mean_k" value="4" />
-    <param name="stddev" value="0.04" />
+    <param name="mean_k" value="8" />
+    <param name="stddev" value="0.05" />
   </node>
 
   <!-- <node pkg="nodelet" type="nodelet" name="mapping_SOR_filt_mapping" args="standalone pcl/StatisticalOutlierRemoval" output="screen" >
@@ -49,12 +49,12 @@
     <param name="stddev" value="0.04" />
   </node> -->
 
-  <node pkg="nodelet" type="nodelet" name="mapping_VOXEL_filt_mapping" args="standalone pcl/VoxelGrid" output="screen" >
+  <!-- <node pkg="nodelet" type="nodelet" name="mapping_VOXEL_filt_mapping" args="standalone pcl/VoxelGrid" output="screen" >
     <remap from="~input" to="raw_point_cloud_centers" />
     <remap from="~output" to="mapping_SOR_filter_out_2" />
-    <param name="leaf_size" value="0.1" />
+    <param name="leaf_size" value="1.0" />
     <param name="filter_field_name" value="z" />
-  </node>
+  </node> -->
   
   <!-- Create "filtered" 3D map using second octomap node -->
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_filtered" output="screen" >
