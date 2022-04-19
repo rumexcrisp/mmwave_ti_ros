@@ -38,7 +38,7 @@
   <node pkg="nodelet" type="nodelet" name="mapping_SOR_filt_mapping" args="standalone pcl/StatisticalOutlierRemoval" output="screen" >
     <remap from="~input" to="raw_point_cloud_centers" />
     <remap from="~output" to="mapping_SOR_filter_out" />
-    <param name="mean_k" value="8" />
+    <param name="mean_k" value="10" />
     <param name="stddev" value="0.05" />
   </node>
 
