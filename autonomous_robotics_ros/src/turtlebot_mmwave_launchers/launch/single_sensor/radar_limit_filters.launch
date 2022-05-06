@@ -7,6 +7,7 @@
    
    <node pkg="nodelet" type="nodelet" name="x_filt" args="load pcl/PassThrough pcl_manager" output="screen">
       <remap from="~input" to="ti_mmwave/radar_scan_pcl" />
+      <!-- <remap from="~input" to="octomap_in" /> -->
       <remap from="~output" to="x_filt_out" />
       <rosparam>
          filter_field_name: x
