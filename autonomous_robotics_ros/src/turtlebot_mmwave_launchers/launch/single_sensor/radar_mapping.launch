@@ -20,13 +20,15 @@
   <node pkg="octomap_server" type="octomap_server_node" name="octomap_realsense_raw" output="screen" >
     <remap from="octomap_point_cloud_centers" to="realsense_raw_point_cloud_centers" />
     <remap from="projected_map" to="realsense_raw_map" />
-    <remap from="cloud_in" to="camera/depth/color/points_decimate" />
+    <remap from="cloud_in" to="camera/depth/color/points" />
     <!-- <remap from="cloud_in" to="radar_laser_pcl" /> -->
     <param name="filter_ground" value="false" />
     <!-- <param name="ground_filter/plane_distance" value="0.00"/> -->
     <param name="sensor_model/max_range" value="2.0"/>
     <param name="pointcloud_min_z" value="0.05"/>
     <param name="pointcloud_max_z" value="0.25"/>
+    <param name="occupancy_min_z" value="0.05"/>
+    <param name="occupancy_max_z" value="0.25"/>
     <param name="sensor_model/hit" value="0.51"/> <!-- sensor trust: high hit, low miss: more trust-->
     <param name="sensor_model/miss" value="0.49"/>
     <param name="sensor_model/min" value="0.3"/> <!-- map update rate: high max, low min: low update rate-->
