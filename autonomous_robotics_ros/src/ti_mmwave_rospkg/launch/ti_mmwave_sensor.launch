@@ -6,7 +6,7 @@
 
   <!-- Input arguments -->
   <arg name="device" default="6843AOP" doc="TI mmWave sensor device type [1443, 1642, 1843, 6843, 6843AOP]"/>
-  <arg name="config" default="6843AOP_3d_2" doc="TI mmWave sensor device configuration"/>
+  <arg name="config" default="6843AOP_3d_10" doc="TI mmWave sensor device configuration"/>
   <arg name="max_allowed_elevation_angle_deg" default="90" doc="Maximum allowed elevation angle in degrees for detected object data [0 > value >= 90]}"/>
   <arg name="max_allowed_azimuth_angle_deg" default="90" doc="Maximum allowed azimuth angle in degrees for detected object data [0 > value >= 90]}"/>
   <arg name="command_port" default="usb-Silicon_Labs_CP2105_Dual_USB_to_UART_Bridge_Controller_00E2589A-if00-port0"/>
